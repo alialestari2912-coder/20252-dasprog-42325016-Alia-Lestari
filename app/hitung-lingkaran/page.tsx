@@ -9,7 +9,6 @@ import {
 } from "@/components/ui/card";
 import { Field, FieldDescription, FieldError } from "@/components/ui/field";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -23,9 +22,8 @@ const formSchema = z.object({
   radius: z
     .string()
     .min(1, "Radius lingkaran harus diisi")
-    .regex(/^-?\d+(\.\d+)?$/, "Radius lingkaran harus berupa angka")
-    .regex(/^[^-]/, "Radius lingkaran harus berupa angka positif")
-    .regex(/^(?!0+(\.0+)?$).+$/, "Radius lingkaran harus lebih besar dari nol")
+    .regex(/\d+(\.\d+)?$/, "Radius harus angka positif")
+    .regex(/^(?!0+(\.0+)?$)\d+(\.\d+)?$/, "Radius tidak boleh nol")
     .transform(Number),
 });
 const HitungLingkaran = () => {
@@ -34,14 +32,29 @@ const HitungLingkaran = () => {
   const [luas, setLuas] = useState(0);
   const [keliling, setKeliling] = useState(0);
   const [sdhDihitung, setSdhDihitung] = useState(false);
-  // Inisialisasi form
+
+  // Inisialisasi form menggunakan useFrom dari@tanstack/react-formdengan
+  // konfigurasi default values, validators, dan on Submit handler
   const form = useForm({
     // menentukan default values untuk masing-masing field dalam formulir
     defaultValues: { radius: "" },
     //menentukan validasi untuk setiap field dalam formulir menggunakan zod.
     validators: { onSubmit: formSchema },
     //menentukan fungsi yang akan dipanggil ketika formulir di submit.
-    onSubmit: () => {},
+    onSubmit: ({ value }) => {
+      console.log(value);
+      const r = Number(value.radius);
+      const hitungLuas = Math.PI * r * r;
+      const hitungKeliling = 2 * Math.PI * r;
+
+      console.log("Luas Lingkaran:", hitungLuas);
+      console.log("Keliling Lingkaran:", hitungKeliling);
+
+      setRadius(radius);
+      setLuas(hitungLuas);
+      setKeliling(hitungKeliling);
+      setSdhDihitung(true);
+    },
   });
 
   return (
@@ -100,7 +113,35 @@ const HitungLingkaran = () => {
           </form>
         </CardContent>
         <Separator />
-        <CardFooter className="flex gap=2">
+        {sdhDihitung && (
+          <>
+            <div className="px-6 text-orange-700">
+              <h1 className="font-semibold mb-3">
+                Hasil Kalkulasi Lingkaran Radius{" "}
+                {radius.toLocaleString("id-ID", {
+                  minimumFractionDigits: 0,
+                  maximumFractionDigits: 2,
+                })}{" "}
+                cm
+              </h1>
+              <p>
+                Luas:{" "}
+                {luas.toLocaleString("id-ID", {
+                  minimumFractionDigits: 0,
+                  maximumFractionDigits: 2,
+                })}{" "}
+                cm<sup>2</sup>, Keliling:{" "}
+                {keliling.toLocaleString("id-ID", {
+                  minimumFractionDigits: 0,
+                  maximumFractionDigits: 2,
+                })}{" "}
+                cm
+              </p>
+            </div>
+            <Separator />
+          </>
+        )}
+        <CardFooter className="flex gap-2">
           <Button> Reset</Button>
           <Button type="submit" form="hitung-lingkaran-form" variant="outline">
             Hitung Luas dan Keliling
