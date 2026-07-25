@@ -1,5 +1,5 @@
 {
-  "idTerakhir": 7,
+  "idTerakhir": 9,
   "data": [
     {
       "id": 1,
@@ -64,6 +64,26 @@
     {
       "id": 7,
       "tglPembelian": "2026-07-25T11:16:58.787Z",
+      "jumlah": 5,
+      "sistemOperasi": "Windows",
+      "hrgPerangkatLunak": 350000,
+      "pajak": 0.07,
+      "biayaPengiriman": 12500,
+      "totalHarga": 1935000
+    },
+    {
+      "id": 8,
+      "tglPembelian": "2026-07-25T12:17:11.724Z",
+      "jumlah": 5,
+      "sistemOperasi": "Windows",
+      "hrgPerangkatLunak": 350000,
+      "pajak": 0.07,
+      "biayaPengiriman": 12500,
+      "totalHarga": 1935000
+    },
+    {
+      "id": 9,
+      "tglPembelian": "2026-07-25T12:20:10.125Z",
       "jumlah": 5,
       "sistemOperasi": "Windows",
       "hrgPerangkatLunak": 350000,
