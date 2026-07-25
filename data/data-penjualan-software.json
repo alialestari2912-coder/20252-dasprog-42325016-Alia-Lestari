@@ -1,0 +1,75 @@
+{
+  "idTerakhir": 7,
+  "data": [
+    {
+      "id": 1,
+      "tglPembelian": "2026-07-24T13:56:29.682Z",
+      "jumlah": 10,
+      "sistemOperasi": "MacOS",
+      "hrgPerangkatLunak": 3500000,
+      "pajak": 245000.00000000003,
+      "biayaPengiriman": 125000,
+      "totalHarga": 3870000
+    },
+    {
+      "id": 2,
+      "tglPembelian": "2026-07-24T13:57:33.329Z",
+      "jumlah": 30,
+      "sistemOperasi": "Linux",
+      "hrgPerangkatLunak": 10500000,
+      "pajak": 735000.0000000001,
+      "biayaPengiriman": 375000,
+      "totalHarga": 11610000
+    },
+    {
+      "id": 3,
+      "tglPembelian": "2026-07-24T14:14:17.522Z",
+      "jumlah": 40,
+      "sistemOperasi": "Windows 64 bit",
+      "hrgPerangkatLunak": 14000000,
+      "pajak": 980000.0000000001,
+      "biayaPengiriman": 500000,
+      "totalHarga": 15480000
+    },
+    {
+      "id": 4,
+      "tglPembelian": "2026-07-25T09:12:36.657Z",
+      "jumlah": 50,
+      "sistemOperasi": "Windows 64 bit",
+      "hrgPerangkatLunak": 17500000,
+      "pajak": 1225000.0000000002,
+      "biayaPengiriman": 625000,
+      "totalHarga": 19350000
+    },
+    {
+      "id": 5,
+      "tglPembelian": "2026-07-25T11:09:27.872Z",
+      "jumlah": 5,
+      "sistemOperasi": "Windows",
+      "hrgPerangkatLunak": 350000,
+      "pajak": 0.07,
+      "biayaPengiriman": 12500,
+      "totalHarga": 1935000
+    },
+    {
+      "id": 6,
+      "tglPembelian": "2026-07-25T11:16:49.388Z",
+      "jumlah": 5,
+      "sistemOperasi": "Windows",
+      "hrgPerangkatLunak": 350000,
+      "pajak": 0.07,
+      "biayaPengiriman": 12500,
+      "totalHarga": 1935000
+    },
+    {
+      "id": 7,
+      "tglPembelian": "2026-07-25T11:16:58.787Z",
+      "jumlah": 5,
+      "sistemOperasi": "Windows",
+      "hrgPerangkatLunak": 350000,
+      "pajak": 0.07,
+      "biayaPengiriman": 12500,
+      "totalHarga": 1935000
+    }
+  ]
+}
